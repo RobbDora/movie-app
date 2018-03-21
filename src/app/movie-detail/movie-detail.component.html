@@ -1,0 +1,13 @@
+<div class="modal-header">
+      <h5 class="modal-title">{{movie.title}}</h5>
+</div>
+<div class="modal-body">
+  <p>{{movie.overview}}</p>
+  <small class="label label-success pull-right" *ngIf="movie.vote_average">
+    Votes: {{movie.vote_average}}
+    <i class="glyphicon glyphicon-star"></i>
+  </small>
+</div>
+    
+
+

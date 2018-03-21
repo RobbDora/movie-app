@@ -1,0 +1,35 @@
+<div class="col-sm-6 col-md-4">
+      <div class="card" style="width: 18rem;">
+        <img src="https://image.tmdb.org/t/p/w300/{{movie.poster_path}}" *ngIf="movie.poster_path">
+        <div class="card-body">
+          <h5 class="card-title">
+            <a title="{{movie.title}}">{{movie.title}}</a>
+          </h5>
+          <p><strong>Release Date: </strong>{{movie.release_date}}</p>
+          <div class="btn-group" role="group" aria-label="Movie buttons">
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)='openMovieDetails()'>
+              View details
+            </button>
+            <div *ngIf="thumbnail">
+            <button type="button" class="btn btn-sm btn-outline-secondary" (click)='addToFavorites(movie)'>
+              Add to favorites
+            </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- movie details modal-->
+    <div class="modal" [ngStyle]="{'display':displayModal}">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <app-movie-detail [movie]="movie"></app-movie-detail>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" (click)='closeMovieDetails()'>Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
